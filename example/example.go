@@ -28,14 +28,8 @@ func GetData(apikey string) {
 
 	// Then print all returned categories for the domain name.
 	for _, obj := range wCategorizationResp.Categories {
-		if obj.Tier1 != nil {
-			log.Printf("ID: %s, Name: %s, Confidence: %f ",
-				obj.Tier1.ID, obj.Tier1.Name, obj.Tier1.Confidence)
-		}
-		if obj.Tier2 != nil {
-			log.Printf("ID: %s, Name: %s, Confidence: %f \n ",
-				obj.Tier2.ID, obj.Tier2.Name, obj.Tier2.Confidence)
-		}
+		log.Printf("ID: %d, Name: %s, Confidence: %f ",
+			obj.ID, obj.Name, obj.Confidence)
 	}
 
 	log.Println("raw response is always in JSON format. Most likely you don't need it.")
@@ -49,8 +43,7 @@ func GetRawData(apikey string) {
 	resp, err := client.GetRaw(context.Background(),
 		"whoisxmlapi.com",
 		// this option causes those only categories having a relevance greater than 0.8 to be returned.
-		websitecategorization.OptionMinConfidence(0.8),
-		websitecategorization.OptionOutputFormat("CSV"))
+		websitecategorization.OptionMinConfidence(0.8))
 
 	if err != nil {
 		// Handle error message returned by server.

@@ -12,10 +12,10 @@ type Option func(v url.Values)
 var _ = []Option{
 	OptionOutputFormat("JSON"),
 	OptionMinConfidence(0.55),
-	OptionOrder("IAB"),
+	OptionOrder("ID"),
 }
 
-// OptionOutputFormat sets Response output format JSON | XML | CSV. Default: JSON.
+// OptionOutputFormat sets Response output format JSON | XML. Default: JSON.
 func OptionOutputFormat(outputFormat string) Option {
 	return func(v url.Values) {
 		v.Set("outputFormat", strings.ToUpper(outputFormat))
@@ -31,8 +31,8 @@ func OptionMinConfidence(value float64) Option {
 }
 
 // OptionOrder sets the categories output order (for GetAllCategories functions only).
-// ABC - output categories ordered alphabetically by the name field. IAB - output categories ordered by the id field.
-// Acceptable values: ABC | IAB. Default: IAB.
+// ABC - output categories ordered alphabetically by the name field. ID - output categories ordered by the id field.
+// Acceptable values: ABC | ID Default: ID.
 func OptionOrder(order string) Option {
 	return func(v url.Values) {
 		v.Set("order", strings.ToUpper(order))

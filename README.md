@@ -60,10 +60,7 @@ if err != nil {
 }
 
 for _, obj := range wCategorizationResp.Categories {
-    if obj.Tier1 != nil {
-        log.Printf("ID: %s, Name: %s, Confidence: %f ",
-        obj.Tier1.ID, obj.Tier1.Name, obj.Tier1.Confidence)
-    }
+	log.Printf("ID: %d, Name: %s, Confidence: %f ", obj.ID, obj.Name, obj.Tier1.Confidence)
 }
 
 // Make request to get raw data in XML.

@@ -86,9 +86,9 @@ func TestWCategorizationGet(t *testing.T) {
 
 	ctx := context.Background()
 
-	const resp = `{"categories":[{"tier1":{"confidence":0.9499015947838411,"id":"IAB-596",
-"name":"Technology & Computing"},"tier2":{"confidence":0.8420597541031617,"id":"IAB-618",
-"name":"Information and Network Security"}}],"domainName":"whoisxmlapi.com","websiteResponded":true}`
+	const resp = `{"as":{"asn":13335,"domain":"https:\/\/www.cloudflare.com","name":"CLOUDFLARENET","route":"104.26.0.0\/20","type":"Content"},
+"domainName":"whoisxmlapi.com","categories":[{"confidence":0.85,"id":5,"name":"Computer and Internet Info"}],
+"createdDate":"2009-03-19T21:47:17+00:00","websiteResponded":true}`
 
 	const respUnparsable = `<?xml version="1.0" encoding="utf-8"?><>`
 
@@ -238,9 +238,9 @@ func TestWCategorizationGetRaw(t *testing.T) {
 
 	ctx := context.Background()
 
-	const resp = `{"categories":[{"tier1":{"confidence":0.9499015947838411,"id":"IAB-596",
-"name":"Technology & Computing"},"tier2":{"confidence":0.8420597541031617,"id":"IAB-618",
-"name":"Information and Network Security"}}],"domainName":"whoisxmlapi.com","websiteResponded":true}`
+	const resp = `{"as":{"asn":13335,"domain":"https:\/\/www.cloudflare.com","name":"CLOUDFLARENET","route":"104.26.0.0\/20","type":"Content"},
+"domainName":"whoisxmlapi.com","categories":[{"confidence":0.85,"id":5,"name":"Computer and Internet Info"}],
+"createdDate":"2009-03-19T21:47:17+00:00","websiteResponded":true}`
 
 	const respUnparsable = `<?xml version="1.0" encoding="utf-8"?><>`
 
@@ -376,8 +376,8 @@ func TestGetAllCategories(t *testing.T) {
 
 	ctx := context.Background()
 
-	const resp = `[{"id":"IAB-1","name":"Automotive","parent":null},{"id":"CUS-1","name":"Trucks","parent":"IAB-1"},
-{"id":"CUS-2","name":"Cars","parent":"IAB-1"},{"id":"IAB-25","name":"Car Culture","parent":"IAB-1"}]`
+	const resp = `[{"id":0,"name":"Uncategorized"},{"id":1,"name":"Real Estate"},{"id":2,"name":"Computer and Internet Security"},
+{"id":3,"name":"Financial Services"},{"id":4,"name":"Business and Economy"}]`
 
 	const respUnparsable = `<?xml version="1.0" encoding="utf-8"?><>`
 
@@ -507,8 +507,8 @@ func TestGetAllCategoriesRaw(t *testing.T) {
 
 	ctx := context.Background()
 
-	const resp = `[{"id":"IAB-1","name":"Automotive","parent":null},{"id":"CUS-1","name":"Trucks","parent":"IAB-1"},
-{"id":"CUS-2","name":"Cars","parent":"IAB-1"},{"id":"IAB-25","name":"Car Culture","parent":"IAB-1"}]`
+	const resp = `[{"id":0,"name":"Uncategorized"},{"id":1,"name":"Real Estate"},{"id":2,"name":"Computer and Internet Security"},
+{"id":3,"name":"Financial Services"},{"id":4,"name":"Business and Economy"}]`
 
 	const respUnparsable = `<?xml version="1.0" encoding="utf-8"?><>`
 

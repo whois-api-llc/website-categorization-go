@@ -10,13 +10,13 @@ import (
 )
 
 const (
-	libraryVersion = "1.0.0"
+	libraryVersion = "1.1.0"
 	userAgent      = "website-categorization-go/" + libraryVersion
 	mediaType      = "application/json"
 )
 
 // defaultWCategorizationURL is the default Website Categorization API URL.
-const defaultWCategorizationURL = `https://website-categorization.whoisxmlapi.com/api/v2`
+const defaultWCategorizationURL = `https://website-categorization.whoisxmlapi.com/api/v3`
 
 // ClientParams is used to create Client. None of parameters are mandatory and
 // leaving this struct empty works just fine for most cases.
