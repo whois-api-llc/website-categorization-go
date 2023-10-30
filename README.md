@@ -20,7 +20,7 @@ go get github.com/whois-api-llc/website-categorization-go
 
 # Examples
 
-Full API documentation available [here](https://website-categorization.whoisxmlapi.com/api/documentation/making-requests)
+Full API documentation available [here](https://website-categorization.whoisxmlapi.com/api/documentation/v3/making-requests)
 
 You can find all examples in `example` directory.
 
@@ -49,7 +49,7 @@ client := websitecategorization.NewClient(apiKey, websitecategorization.ClientPa
 
 ## Make basic requests
 
-Website Categorization API lets you get top Internet Advertising Bureau (IAB) categories for websites.
+Website Categorization API lets you get all supported categories for websites.
 
 ```go
 
